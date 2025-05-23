@@ -37,6 +37,23 @@ function optimal(ar){
    return ar;
 }
 
+function moveZeroesToEndOptimal(ar){
+    let i=0,j=0;
+    while(j<ar.length){
+        if(ar[j]===0){
+            j++;
+        }
+        else{
+            temp=ar[i];
+            ar[i]=ar[j];
+            ar[j]=temp;
+            i++;
+            j++;
+        }
+
+    }
+    return ar;
+}
 function swap(ar,i,j){
     temp=ar[i];
     ar[i]=ar[j];

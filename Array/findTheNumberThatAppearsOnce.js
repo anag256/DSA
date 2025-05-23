@@ -10,6 +10,13 @@ function findTheNumberThatAppearsOnce(ar){
     return Object.keys(mapOfFrequencies).find((key)=>mapOfFrequencies[key]==1)
 }
 
+// (1) If you take xor of a number with 0 ( zero ) , it would return the same number again.
+
+// Means , n ^ 0 = n
+
+// (2) If you take xor of a number with itself , it would return 0 ( zero ).
+
+// Means , n ^ n = 0
 // 1^1=0
 // 0^2=2
 //tc- o(n)

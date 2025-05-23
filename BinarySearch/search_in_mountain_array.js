@@ -54,4 +54,4 @@ function find(ar,target){
 return result;
 }
 
-console.log(find([1,2,3,4,5,3,1],3))
+console.log(find([4,5,6,6,6,7,7,7,7,7,7,0,1,2,3],3))

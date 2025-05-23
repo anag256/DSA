@@ -1,23 +1,17 @@
 // https://leetcode.com/problems/daily-temperatures/
-let dailyTemperatures = function(temperatures) {
-    let i=0,j=1;
-    let res=[];
-    while(i<temperatures.length){
-        if(j==temperatures.length){
-           res[i]=0
-           i++;
-           j=i+1;
-        }
-        else if(temperatures[j]>temperatures[i]){
-            res[i]=(res[i] || 0) + 1;
-            ++i;
-            j=i+1;
-        }
-        else{
-            res[i]=(res[i] || 0) + 1;
-            j++;
-        }
+//store days in stack
+let dailyTemperatures = function(ar) {
+    let res=[],stack=[];
+    res=Array.from(ar).fill(0);
+    for(let i=0;i<ar.length;i++){
+        let stackTopElement=stack[stack.length-1];
+        while(ar[i]>ar[stackTopElement]){
 
+                res[stackTopElement]=i-stackTopElement;
+                stack.pop();
+
+        }
+        stack.push(i);
     }
     return res;
 };
